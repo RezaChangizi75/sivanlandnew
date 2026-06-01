@@ -1,6 +1,7 @@
 import { ProductGallery } from "../../component/ProductGallery";
 import { ProductInfo } from "../../component/ProductInfo";
 import { ProductPriceCard } from "../../component/ProductPriceCard";
+import { ExpertCard } from "../../component/ExpertCard";
 import { ProductSpecs } from "../../component/ProductSpecs";
 import { Product } from "../../types/productDetailsType.ts/types";
 
@@ -12,10 +13,10 @@ export function ProductHeroSection({
   product,
 }: Props) {
   return (
-    <section>
-      <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
+    <section className="container mx-auto py-10">
+      <div className="grid gap-6 lg:grid-cols-3">
 
-        <div className="space-y-6">
+        <div className="space-y-6 lg:col-span-2">
           <div className="grid gap-6 xl:grid-cols-[350px_1fr]">
             <ProductGallery
               images={product.images}
@@ -31,13 +32,16 @@ export function ProductHeroSection({
             specs={product.specs}
           />
         </div>
-        {/* Price Card */}
-        <ProductPriceCard
-          price={product.price}
-          unit={product.unit}
-        />
 
-        {/* Content */}
+        {/* Right column: Price + Expert stacked */}
+        <div className="space-y-24 gap-10">
+          <ProductPriceCard
+            price={product.price}
+            unit={product.unit}
+          />
+
+          <ExpertCard />
+        </div>
 
       </div>
     </section>
