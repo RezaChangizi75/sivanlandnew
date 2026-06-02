@@ -1,57 +1,94 @@
-export const product = {
+import { ProductDetails } from "../productDetails/types/productDetailsType.ts/types";
+
+export const product: ProductDetails = {
   id: "1",
-
   title: "سیمان پاکتی آبیک تیپ ۲",
-
-  category: "سیمان",
-
+  brand: "نیما فناوری فردا",
+  categoryTrail: ["صفحه خانه", "مصالح ساختمانی", "سیمان", "مصالح پودری"],
+  updatedAt: "۱۲ خرداد ۱۴۰۵",
+  supplierCount: 6,
+  reviewSummary: "قیمت به روز، تامین مستقیم کارخانه و مناسب پروژه های ساختمانی",
   price: 165000,
-
-  unit: "کیسه",
-
-  factory: "آبیک",
-
-  weight: "50 کیلوگرم",
-
-  type: "تیپ ۲",
-
-  description:
-    "سیمان پرتلند تیپ ۲ مناسب برای مصارف ساختمانی.",
-
-  images: [
-    "/images/cement-1.jpg",
-    "/images/cement-2.jpg",
-    "/images/cement-3.jpg",
+  unit: "پاکت",
+  mainImageLabel: "سیمان آبیک",
+  gallery: ["سیمان آبیک", "پاکت ۵۰ کیلویی", "تیپ ۲"],
+  metrics: [
+    { label: "نوع بسته بندی", value: "پاکت ۵۰ کیلویی" },
+    { label: "نوع محصول", value: "تیپ ۲" },
+    { label: "نوع فروش", value: "آنی" },
+    { label: "هزینه ارسال", value: "تحویل کار" },
+    { label: "حداقل سفارش", value: "۵۰ پاکت" },
+    { label: "حداکثر سفارش", value: "۱۰۰۰ پاکت" },
   ],
-
   specs: [
+    { label: "تیپ", value: "تیپ ۲" },
+    { label: "نوع", value: "پاکت" },
+    { label: "زمان گیرایش اولیه", value: "پاکت ۵۰ کیلویی" },
+    { label: "زمان گیرایش نهایی", value: "پاکت ۵۰ کیلویی" },
+    { label: "وزن", value: "۵۰" },
+    { label: "جنس بسته بندی", value: "پاکت ۵۰ کیلویی" },
+    { label: "موجودی پایه", value: "۱ پاکت" },
+    { label: "نوع فروش", value: "عمده" },
+  ],
+  description: [
+    "سیمان پاکتی تیپ ۲ نیما از محصولات باکیفیت کارخانه سیمان آبیک است که مطابق با استانداردهای ایران تولید شده و برای استفاده در شرایط محیطی با رطوبت متوسط، بتن ریزی عمومی و پروژه های ساختمانی گزینه ای قابل اعتماد است.",
+    "این محصول به دلیل ویژگی های فنی پایدار، مقاومت مناسب، بسته بندی استاندارد و امکان تامین حجمی برای پیمانکاران، در بازار مصالح ساختمانی تقاضای بالایی دارد.",
+    "قیمت سیمان پاکتی آبیک تیپ ۲ در همین صفحه به صورت به روز قابل مشاهده است. در زمان اتصال API، همین بخش از سرویس محصول و تامین کنندگان پر می شود.",
+  ],
+  store: {
+    name: "نیما فناوری فردا",
+    responseRate: "۸۸٪ پاسخ دهی",
+    salesCount: 210,
+    stock: "۲۰۰ پاکت",
+    deliveryTime: "۲ روز کاری",
+    deliveryMethod: "درب کارخانه",
+    priceFrom: 165000,
+  },
+  expert: {
+    id: "e1",
+    name: "وحید نصیری",
+    role: "کارشناس کاشی و سرامیک",
+    phone: "021 91013939",
+    extension: "داخلی ۴",
+  },
+  suppliers: [
+    { id: "s1", name: "نیما فناوری فردا", price: 145600, stock: 200, deliveryTime: "۲ روز", deliveryType: "درب کارخانه", rating: 4.8 },
+    { id: "s2", name: "فروشگاه سیمان متارک", price: 176600, stock: 350, deliveryTime: "۵ روز", deliveryType: "درب کارخانه", rating: 4.5 },
+    { id: "s3", name: "سیمان آینده", price: 149600, stock: 200, deliveryTime: "۲ روز", deliveryType: "درب کارخانه", rating: 4.7 },
+    { id: "s4", name: "کلینیک ساختمانی آفاق", price: 210600, stock: 500, deliveryTime: "۷ روز", deliveryType: "درب کارخانه", rating: 4.3 },
+    { id: "s5", name: "مصالح ساختمانی پارس", price: 158600, stock: 428, deliveryTime: "۳ روز", deliveryType: "درب کارخانه", rating: 4.6 },
+  ],
+  supportSuppliers: [
+    { id: "p1", name: "نیما فناوری فردا", price: 46600, stock: 200, deliveryTime: "۲ روز", deliveryType: "درب کارخانه" },
+    { id: "p2", name: "فروشگاه سیمان متارک", price: 46600, stock: 350, deliveryTime: "۵ روز", deliveryType: "درب کارخانه" },
+    { id: "p3", name: "سیمان آینده", price: 46600, stock: 200, deliveryTime: "۲ روز", deliveryType: "درب کارخانه" },
+    { id: "p4", name: "کلینیک ساختمانی آفاق", price: 46600, stock: 500, deliveryTime: "۷ روز", deliveryType: "درب کارخانه" },
+    { id: "p5", name: "مصالح ساختمانی پارس", price: 46600, stock: 428, deliveryTime: "۳ روز", deliveryType: "درب کارخانه" },
+    { id: "p6", name: "نیما فناوری فردا", price: 46600, stock: 200, deliveryTime: "۲ روز", deliveryType: "درب کارخانه" },
+  ],
+  relatedProducts: [
+    { id: "r1", title: "سیمان پاکتی ساوه تیپ ۲", supplier: "فروشگاه هیراب", price: 244000, badge: "جدید" },
+    { id: "r2", title: "سیمان پاکتی آبیک تیپ ۵", supplier: "نیما فناوری فردا", price: 244000, badge: "پرفروش" },
+    { id: "r3", title: "سیمان سفید نی ریز", supplier: "مصالح پارس", price: 244000, badge: "عمده" },
+    { id: "r4", title: "سیمان پاکتی تهران", supplier: "آینده سازان", price: 244000, badge: "تخفیف" },
+  ],
+  faq: [
     {
-      label: "نوع",
-      value: "تیپ ۲",
+      question: "آیا اطلاعات قیمت سیمان آبیک به روز است؟",
+      answer: "بله، ساختار صفحه برای دریافت قیمت لحظه ای از API آماده شده است.",
     },
     {
-      label: "وزن",
-      value: "۵۰ کیلوگرم",
+      question: "حداقل سفارش سیمان پاکتی چقدر است؟",
+      answer: "در نمونه فعلی ۵۰ پاکت در نظر گرفته شده و پس از اتصال API از پاسخ تامین کننده خوانده می شود.",
     },
     {
-      label: "کارخانه",
-      value: "آبیک",
-    },
-    {
-      label: "بسته بندی",
-      value: "پاکتی",
+      question: "امکان مقایسه تامین کنندگان وجود دارد؟",
+      answer: "بله، جدول تامین کنندگان برای مقایسه قیمت، موجودی و زمان تحویل طراحی شده است.",
     },
   ],
 };
 
-
-export const specs = [
-  {
-    label: "نوع",
-    value: "تیپ ۲",
-  },
-  {
-    label: "وزن",
-    value: "۵۰ کیلوگرم",
-  },
-];
+export const getMockProductDetails = (id: string) => ({
+  ...product,
+  id,
+});
