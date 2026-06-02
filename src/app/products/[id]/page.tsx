@@ -1,12 +1,13 @@
-import { product } from '@/feature/products/data/mockdata'
 import { ProductHeroSection } from '@/feature/products/productDetails/sections/ProductHeroSection/ProductHeroSection'
-import React from 'react'
 
-function ProductId() {
-    return (
-        <ProductHeroSection product={product} />
-      )
-  
+interface ProductIdPageProps {
+  params: Promise<{
+    id: string;
+  }>;
 }
 
-export default ProductId
+export default async function ProductId({ params }: ProductIdPageProps) {
+  const { id } = await params;
+
+  return <ProductHeroSection productId={id} />;
+}

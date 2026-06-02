@@ -240,9 +240,9 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --font-sans: var(--font-sans);
+  --font-sans: "Vazirmatn", "Geist", ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-serif);
-  --font-mono: var(--font-mono);
+  --font-mono: "Geist Mono", ui-monospace, monospace;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
