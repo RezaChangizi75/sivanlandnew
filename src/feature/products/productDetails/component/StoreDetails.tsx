@@ -1,9 +1,11 @@
 "use client";
 
 import { ChevronDown, Store } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
-import { SectionCard } from "./SectionCard";
 import type { ProductDetails } from "@/feature/products/productDetails/types/productDetailsType.ts/types";
+
+import { SectionCard } from "./SectionCard";
 
 interface StoreDetailsProps {
   product: ProductDetails;
@@ -19,56 +21,69 @@ export function StoreDetails({ product }: StoreDetailsProps) {
   ] as const;
 
   return (
-    <SectionCard className="p-4">
-      <div className="rounded-xl bg-muted p-4">
-        <div className="flex flex-col gap-6">
-          <div className="flex justify-between">
-            <p className="text-xs text-muted-foreground">مشاهده</p>
-            <p className="text-xs text-primary underline">مشاهده 6 فروشگاه دیگر</p>
+    <SectionCard className="p-3 sm:p-4">
+      <div className="rounded-xl bg-muted p-3 sm:p-4">
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-xs text-muted-foreground">فروشنده</p>
+            <button
+              type="button"
+              onClick={() => {
+                const el = document.getElementById("supplier-table");
+                el?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              className="text-xs font-medium text-primary underline-offset-4 hover:underline"
+            >
+              مشاهده {product.supplierCount} فروشگاه دیگر
+            </button>
           </div>
-          <div className="flex items-center gap-4">
-          <div className="grid size-16 place-items-center rounded-full border bg-white text-primary">
-            <Store className="size-9" />
-          </div>
-          <div className="">
-            <h2 className="text-lg font-bold">{product.store.name}</h2>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {product.store.responseRate} 
-            </p>
-            <p className="mt-1 text-xs text-muted-foreground">
-              تعداد فروش موفق {product.store.salesCount} 
-            </p>
+
+          <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+            <div className="grid size-14 shrink-0 place-items-center rounded-full border bg-white text-primary sm:size-16">
+              <Store className="size-8 sm:size-9" />
+            </div>
+            <div className="min-w-0">
+              <h2 className="truncate text-base font-bold sm:text-lg">{product.store.name}</h2>
+              <p className="mt-1 text-xs text-muted-foreground">{product.store.responseRate}</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                تعداد فروش موفق {product.store.salesCount}
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="my-5 space-y-3">
+      <div className="my-4 space-y-3 sm:my-5">
         {rows.map(([label, value]) => (
-          <div key={label} className="flex items-center justify-between border-b border-border pb-2 text-sm">
+          <div
+            key={label}
+            className="flex items-center justify-between gap-3 border-b border-border pb-2 text-sm"
+          >
             <span className="text-muted-foreground">{label}:</span>
-            <span className="font-semibold">{value}</span>
+            <span className="text-left font-semibold">{value}</span>
           </div>
         ))}
-        <div className="flex items-center justify-between text-sm">
+        <div className="flex flex-wrap items-end justify-between gap-2 text-sm">
           <span className="text-muted-foreground">شروع قیمت از:</span>
-          <strong className="text-xl">{formatPrice(product.store.priceFrom)} تومان</strong>
+          <strong className="text-lg sm:text-xl">
+            {formatPrice(product.store.priceFrom)} تومان
+          </strong>
         </div>
       </div>
 
-      <div className="grid grid-cols-[1fr_auto] gap-2">
+      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+        <Button className="h-11 w-full">افزودن به سبد خرید</Button>
         <Button
           variant="outline"
-          className="h-11 min-w-36"
+          className="h-11 w-full"
           onClick={() => {
             const el = document.getElementById("supplier-table");
-            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            el?.scrollIntoView({ behavior: "smooth", block: "start" });
           }}
         >
           سایر تامین کنندگان
           <ChevronDown className="size-4" />
         </Button>
-        <Button className="h-11">افزودن به سبد خرید</Button>
       </div>
     </SectionCard>
   );

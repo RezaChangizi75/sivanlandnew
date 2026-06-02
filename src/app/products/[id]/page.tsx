@@ -1,13 +1,13 @@
-import { ProductHeroSection } from '@/feature/products/productDetails/sections/ProductDetailsSection'
+import { ProductDetailsSection } from "@/feature/products/productDetails/sections/ProductDetailsSection";
 
 interface ProductIdPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default async function ProductId({ params }: ProductIdPageProps) {
-  const { id } = params;
+  const { id } = await params;
 
-  return <ProductHeroSection productId={id} />;
+  return <ProductDetailsSection productId={id} />;
 }

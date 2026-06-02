@@ -1,9 +1,11 @@
 "use client";
 
 import { GalleryVerticalEnd, Phone, ShoppingCart } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
-import { SectionCard } from "./SectionCard";
 import type { ProductSupplier } from "@/feature/products/productDetails/types/productDetailsType.ts/types";
+
+import { SectionCard } from "./SectionCard";
 
 interface SupplierTableProps {
   title: string;
@@ -13,17 +15,51 @@ interface SupplierTableProps {
 
 const formatPrice = (value: number) => value.toLocaleString("fa-IR");
 
-export function SupplierTable({ title, suppliers, compactActions = false }: SupplierTableProps) {
+export function SupplierTable({
+  title,
+  suppliers,
+  compactActions = false,
+}: SupplierTableProps) {
   return (
-    <SectionCard className="overflow-hidden p-4">
-      <div className="mb-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <GalleryVerticalEnd className="size-5 text-muted-foreground" />
-          <h2 className="text-lg font-bold">{title}</h2>
+    <SectionCard className="overflow-hidden p-3 sm:p-4">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <div className="flex min-w-0 items-center gap-2">
+          <GalleryVerticalEnd className="size-5 shrink-0 text-muted-foreground" />
+          <h2 className="truncate text-base font-bold sm:text-lg">{title}</h2>
         </div>
         <span className="text-xs text-muted-foreground">مشاهده همه</span>
       </div>
-      <div className="overflow-x-auto">
+
+      <div className="space-y-3 md:hidden">
+        {suppliers.map((supplier) => (
+          <article key={supplier.id} className="rounded-xl bg-muted p-3">
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0">
+                <h3 className="truncate text-sm font-bold">{supplier.name}</h3>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  تحویل {supplier.deliveryTime} | موجودی {supplier.stock}
+                </p>
+              </div>
+              {compactActions ? (
+                <Button size="icon-sm" variant="outline" aria-label="تماس با تامین کننده">
+                  <Phone className="size-4" />
+                </Button>
+              ) : (
+                <Button size="sm" className="shrink-0">
+                  <ShoppingCart className="size-4" />
+                  سفارش
+                </Button>
+              )}
+            </div>
+            <div className="mt-3 flex items-center justify-between border-t border-border pt-3 text-sm">
+              <span className="text-muted-foreground">قیمت</span>
+              <strong>{formatPrice(supplier.price)} تومان</strong>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div className="hidden overflow-x-auto md:block">
         <table className="w-full min-w-[640px] border-separate border-spacing-y-2 text-sm">
           <thead>
             <tr className="bg-[#202027] text-white">
