@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa" className="h-full antialiased">
+    <html lang="fa" dir="rtl" className="h-full antialiased">
       <body className="flex min-h-full flex-col">
         <Providers>{children}</Providers>
       </body>

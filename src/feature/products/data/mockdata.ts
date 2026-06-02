@@ -11,7 +11,7 @@ export const product: ProductDetails = {
   price: 165000,
   unit: "پاکت",
   mainImageLabel: "سیمان آبیک",
-  gallery: ["سیمان آبیک", "پاکت ۵۰ کیلویی", "تیپ ۲"],
+  gallery: ["/1.png", "/2.png", "/3.png"],
   metrics: [
     { label: "نوع بسته بندی", value: "پاکت ۵۰ کیلویی" },
     { label: "نوع محصول", value: "تیپ ۲" },
@@ -51,6 +51,36 @@ export const product: ProductDetails = {
     phone: "021 91013939",
     extension: "داخلی ۴",
   },
+  experts: [
+    {
+      id: "e1",
+      name: "وحید نصیری",
+      role: "کارشناس کاشی و سرامیک",
+      phone: "021 91013939",
+      extension: "داخلی ۱",
+    },
+    {
+      id: "e2",
+      name: "علی محمدی",
+      role: "کارشناس سیمان و مصالح",
+      phone: "021 91013940",
+      extension: "داخلی ۲",
+    },
+    {
+      id: "e3",
+      name: "فاطمه احمدی",
+      role: "کارشناس تدارکات",
+      phone: "021 91013941",
+      extension: "داخلی ۳",
+    },
+    {
+      id: "e4",
+      name: "محمد رضایی",
+      role: "کارشناس فروش",
+      phone: "021 91013942",
+      extension: "داخلی ۴",
+    },
+  ],
   suppliers: [
     { id: "s1", name: "نیما فناوری فردا", price: 145600, stock: 200, deliveryTime: "۲ روز", deliveryType: "درب کارخانه", rating: 4.8 },
     { id: "s2", name: "فروشگاه سیمان متارک", price: 176600, stock: 350, deliveryTime: "۵ روز", deliveryType: "درب کارخانه", rating: 4.5 },

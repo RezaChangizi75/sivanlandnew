@@ -64,6 +64,7 @@ export interface ProductDetails {
     priceFrom: number;
   };
   expert: ProductExpert;
+  experts: ProductExpert[];
   suppliers: ProductSupplier[];
   supportSuppliers: ProductSupplier[];
   relatedProducts: ProductRelatedItem[];
