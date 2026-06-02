@@ -49,11 +49,6 @@ export function ProductExpertCard({ product }: ProductExpertCardProps) {
       <div className="mb-4 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <h2 className="text-lg font-bold">کارشناسان ما</h2>
-          {experts.length > 1 && (
-            <span className="text-xs font-medium text-muted-foreground">
-              {currentIndex + 1}/{experts.length}
-            </span>
-          )}
           <span className="text-xs text-primary cursor-pointer hover:underline">مشاهده همه</span>
         </div>
         <div className="flex items-center gap-2">
@@ -93,8 +88,7 @@ export function ProductExpertCard({ product }: ProductExpertCardProps) {
             <CarouselItem key={expert.id} className="basis-full">
               <div className="flex flex-col gap-3 rounded-xl bg-muted p-4">
                 <div className="flex items-center gap-3">
-                  <div className="grid size-16 shrink-0 place-items-center rounded-full bg-[#54c865] text-white">
-                    <span className="size-8">👤</span>
+                  <div className="grid size-16 shrink-0 place-items-center rounded-full border border-emerald-700 bg-[#54c865] text-white">
                   </div>
                   <div className="min-w-0 flex-1">
                     <h3 className="font-bold">{expert.name}</h3>
