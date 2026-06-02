@@ -24,6 +24,7 @@ export interface ProductRelatedItem {
   supplier: string;
   price: number;
   badge?: string;
+  image?: string;
 }
 
 export interface ProductExpert {

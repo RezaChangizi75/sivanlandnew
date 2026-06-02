@@ -97,13 +97,13 @@ export const product: ProductDetails = {
     { id: "p6", name: "نیما فناوری فردا", price: 46600, stock: 200, deliveryTime: "۲ روز", deliveryType: "درب کارخانه" },
   ],
   relatedProducts: [
-    { id: "r1", title: "سیمان پاکتی ساوه تیپ ۲", supplier: "فروشگاه هیراب", price: 244000, badge: "جدید" },
-    { id: "r2", title: "سیمان پاکتی آبیک تیپ ۵", supplier: "نیما فناوری فردا", price: 244000, badge: "پرفروش" },
-    { id: "r3", title: "سیمان سفید نی ریز", supplier: "مصالح پارس", price: 244000, badge: "عمده" },
-    { id: "r4", title: "سیمان پاکتی تهران", supplier: "آینده سازان", price: 244500, badge: "تخفیف" },
-    { id: "r5", title: "سیمان پاکتی شیراز", supplier: "آینده سازان شیراز", price: 244660, badge: "تخفیف" },
-    { id: "r6", title: "سیمان پاکتی اصفهان", supplier: "آینده سازان اصفهان", price: 244770, badge: "عمده" },
-    { id: "r7", title: "سیمان پاکتی اهواز", supplier: "آینده سازان اهواز", price: 244880, badge: "پرفروش" },
+    { id: "r1", title: "سیمان پاکتی ساوه تیپ ۲", supplier: "فروشگاه هیراب", price: 244000, badge: "جدید", image: "/1.png" },
+    { id: "r2", title: "سیمان پاکتی آبیک تیپ ۵", supplier: "نیما فناوری فردا", price: 244000, badge: "پرفروش", image: "/2.png" },
+    { id: "r3", title: "سیمان سفید نی ریز", supplier: "مصالح پارس", price: 244000, badge: "عمده", image: "/3.png" },
+    { id: "r4", title: "سیمان پاکتی تهران", supplier: "آینده سازان", price: 244500, badge: "تخفیف", image: "/1.png" },
+    { id: "r5", title: "سیمان پاکتی شیراز", supplier: "آینده سازان شیراز", price: 244660, badge: "تخفیف", image: "/2.png" },
+    { id: "r6", title: "سیمان پاکتی اصفهان", supplier: "آینده سازان اصفهان", price: 244770, badge: "عمده", image: "/3.png" },
+    { id: "r7", title: "سیمان پاکتی اهواز", supplier: "آینده سازان اهواز", price: 244880, badge: "پرفروش", image: "/1.png" },
   ],
   faq: [
     {
