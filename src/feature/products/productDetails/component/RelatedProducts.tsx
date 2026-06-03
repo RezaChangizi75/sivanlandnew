@@ -41,24 +41,24 @@ export function RelatedProducts({ products }: RelatedProductsProps) {
         className="w-full"
       >
         <div className="mb-4 flex items-center justify-between gap-3">
-          <div className="flex min-w-0 flex-1 items-center justify-end gap-3">
-            <Link
-              href="/products"
-              className="hidden items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-primary sm:flex"
-            >
-              <ChevronLeft size={12} />
-              <span>مشاهده همه</span>
-            </Link>
+          <div className="flex min-w-0 items-center justify-end gap-3">
 
             <div className="flex min-w-0 items-center gap-2">
+              <GalleryVerticalEnd className="size-8 p-2 shrink-0 text-muted-foreground bg-muted" />
               <h2 className="truncate text-base font-bold sm:text-lg">محصولات مرتبط</h2>
-              <GalleryVerticalEnd className="size-5 shrink-0 text-muted-foreground" />
             </div>
+            <Link
+              href="/products"
+              className="flex items-end gap-1 text-xs text-muted-foreground transition-colors hover:text-primary"
+            >
+              <span>مشاهده همه</span>
+              <ChevronLeft size={12} />
+            </Link>
           </div>
 
-          <div className="flex shrink-0 items-center gap-2" dir="ltr">
-            <CarouselPrevious className="static size-10 translate-y-0 rounded-xl border-0 bg-muted text-foreground shadow-none hover:bg-muted/80 disabled:bg-muted disabled:text-muted-foreground" />
-            <CarouselNext className="static size-10 translate-y-0 rounded-xl border-0 bg-muted text-foreground shadow-none hover:bg-muted/80 disabled:bg-muted disabled:text-muted-foreground" />
+          <div className="hidden sm:flex shrink-0 items-center gap-2" dir="ltr">
+            <CarouselPrevious className="static size-8 translate-y-0 rounded-sm border-0 bg-muted text-foreground shadow-none hover:bg-muted/80 disabled:bg-muted disabled:text-muted-foreground" />
+            <CarouselNext className="static size-8 translate-y-0 rounded-sm border-0 bg-muted text-foreground shadow-none hover:bg-muted/80 disabled:bg-muted disabled:text-muted-foreground" />
           </div>
         </div>
 
@@ -93,13 +93,13 @@ export function RelatedProducts({ products }: RelatedProductsProps) {
           })}
         </CarouselContent>
 
-        <Link
+        {/* <Link
           href="/products"
           className="mt-3 flex items-center justify-center gap-1 text-xs text-muted-foreground transition-colors hover:text-primary sm:hidden"
         >
-          <ChevronLeft size={12} />
           <span>مشاهده همه</span>
-        </Link>
+          <ChevronLeft size={10} />
+        </Link> */}
       </Carousel>
     </SectionCard>
   );
