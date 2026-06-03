@@ -3,6 +3,7 @@
 import { GalleryVerticalEnd, Phone, ShoppingCart } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 import type { ProductSupplier } from "@/feature/products/productDetails/types/productDetailsType.ts/types";
 
 import { SectionCard } from "./SectionCard";
@@ -29,7 +30,7 @@ export function SupplierTable({
         </div>
       </div>
 
-      <div className="space-y-3 md:hidden">
+      {/* <div className="space-y-3 md:hidden">
         {suppliers.map((supplier) => (
           <article key={supplier.id} className="rounded-xl bg-muted p-3">
             <div className="flex items-start justify-between gap-3">
@@ -56,42 +57,80 @@ export function SupplierTable({
             </div>
           </article>
         ))}
-      </div>
+      </div> */}
 
-      <div className="hidden overflow-x-auto md:block">
-        <table className="w-full min-w-[640px] border-separate border-spacing-y-2 text-sm">
-          <thead>
-            <tr className="bg-[#202027] text-white">
-              <th className="rounded-r-lg px-4 py-3 text-right font-medium">تامین کننده</th>
-              <th className="px-4 py-3 text-right font-medium">تحویل</th>
-              <th className="px-4 py-3 text-right font-medium">موجودی</th>
-              <th className="px-4 py-3 text-right font-medium">قیمت (تومان)</th>
-              <th className="rounded-l-lg px-4 py-3 text-right font-medium">اقدام</th>
-            </tr>
-          </thead>
-          <tbody>
+      <div className="overflow-x-auto no-scrollbar">
+        <Table className="min-w-[240px] text-sm">
+          <TableHeader>
+            <TableRow className="bg-[#202027] text-white  hover:bg-[#202027]">
+              <TableHead className="w-[90px] md:w-auto rounded-r-lg px-1 py-3 sm:px-1 md:px-4 md:py-3 text-right font-medium text-inherit">تامین کننده</TableHead>
+              <TableHead className="w-[90px] md:w-auto px-0 py-3 sm:px-1 md:px-4 md:py-3 text-right font-medium text-inherit">تحویل</TableHead>
+              <TableHead className="w-[90px] md:w-auto px-0 py-3 sm:px-1 md:px-4 md:py-3 text-right font-medium text-inherit">موجودی</TableHead>
+              <TableHead className="w-[90px] md:w-auto px-0 py-3 sm:px-1 md:px-4 md:py-3 text-right font-medium text-inherit">قیمت <span className="text-muted-foreground">تومان</span></TableHead>
+              <TableHead className="rounded-l-lg px-1 py-3 sm:px-1 md:px-4 md:py-3 text-right font-medium text-inherit"></TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
             {suppliers.map((supplier) => (
-              <tr key={supplier.id} className="bg-muted">
-                <td className="rounded-r-lg px-4 py-3 font-semibold">{supplier.name}</td>
-                <td className="px-4 py-3">{supplier.deliveryTime}</td>
-                <td className="px-4 py-3">{supplier.stock}</td>
-                <td className="px-4 py-3">{formatPrice(supplier.price)}</td>
-                <td className="rounded-l-lg px-4 py-3">
+              <TableRow key={supplier.id} className="bg-muted">
+                <TableCell className="rounded-r-lg  px-1 py-3 sm:px-1 md:px-4 md:py-3 font-semibold"><span className="block w-[80px] truncate md:w-auto">
+    {supplier.name}
+  </span></TableCell>
+                <TableCell className="px-0 py-3 sm:px-1 md:px-4 md:py-3">{supplier.deliveryTime}</TableCell>
+                <TableCell className="px-0 py-3 sm:px-1 md:px-4 md:py-3">{supplier.stock}</TableCell>
+                <TableCell className="px-0 py-3 sm:px-1 md:px-4 md:py-3">{formatPrice(supplier.price)} <span className="text-muted-foreground">تومان</span></TableCell>
+                <TableCell className="rounded-l-lg px-1 py-3 sm:px-1 md:px-4 md:py-3">
                   {compactActions ? (
-                    <Button size="icon-sm" variant="outline" aria-label="تماس با تامین کننده">
-                      <Phone className="size-4" />
-                    </Button>
+
+                   <div className="w-full flex justify-end">
+                        
+                        <Button
+                          size="icon"
+                          className="md:hidden h-8 w-8 bg-white text-black hover:bg-white/85"
+                        >
+                          <ShoppingCart className="size-4" />
+                        </Button>
+
+                        
+                        <div className="hidden md:flex items-center justify-end gap-2">
+                          <Button variant="outline" aria-label="تماس با تامین کننده">
+                            <Phone className="size-4" />
+                          </Button>
+
+                          <Button className="h-8 bg-white px-4 text-xs text-black hover:bg-white/85">
+                            <ShoppingCart className="size-4" />
+                            افزودن به سبد خرید
+                          </Button>
+                        </div>
+                      </div>
                   ) : (
-                    <Button className="h-8 bg-primary px-3 text-xs">
-                      <ShoppingCart className="size-4" />
-                      سفارش
-                    </Button>
+                    <div className="w-full flex justify-end">
+
+                        <Button
+                          size="icon"
+                          className="md:hidden h-8 w-8 bg-primary"
+                        >
+                          <ShoppingCart className="size-4" />
+                        </Button>
+
+                        {/* Desktop */}
+                        <div className="hidden md:flex items-center justify-end gap-2">
+                          <Button variant="outline" aria-label="تماس با تامین کننده">
+                            <Phone className="size-4" />
+                          </Button>
+
+                          <Button className="h-8 bg-primary px-4 text-xs">
+                            <ShoppingCart className="size-4" />
+                            سفارش تلفنی
+                          </Button>
+                        </div>
+                      </div>
                   )}
-                </td>
-              </tr>
+                </TableCell>
+              </TableRow>
             ))}
-          </tbody>
-        </table>
+          </TableBody>
+        </Table>
       </div>
     </SectionCard>
   );
