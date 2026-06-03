@@ -59,7 +59,7 @@ export function ProductGallery({ product }: ProductGalleryProps) {
   return (
     <div className="min-w-0 space-y-3">
       <div className="relative min-h-[240px] overflow-hidden rounded-2xl border border-border bg-white p-3 sm:min-h-[260px] sm:p-4">
-        <span className="absolute left-0 top-0 rounded-tl-lg bg-red-600 px-4 py-2 text-sm font-bold text-white">
+        <span className="absolute left-0 top-0 rounded-tl-lg bg-red-600 px-4 py-2 text-sm font-bold text-white z-1">
           عمده
         </span>
 
@@ -95,14 +95,13 @@ export function ProductGallery({ product }: ProductGalleryProps) {
             ))}
           </CarouselContent>
           <CarouselNext
-            size="icon"
             variant="ghost"
-            className="right-1 z-20 bg-white/70 hover:bg-white"
+            className="size-8 right-1 z-20 bg-white/70 hover:bg-white"
           />
         </Carousel>
 
-        <div className="absolute bottom-3 left-4 text-base font-black text-primary sm:bottom-4 sm:left-5 sm:text-lg">
-          نیما
+        <div className="absolute bottom-3 right-4 text-base font-black text-primary sm:bottom-4 sm:left-5 sm:text-lg">
+          زیما
         </div>
       </div>
     </div>
