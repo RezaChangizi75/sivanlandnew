@@ -51,7 +51,7 @@ export function ProductDetailsSection({ productId }: ProductDetailsSectionProps)
         <RelatedProducts products={product.relatedProducts} />
         <SupplierTable title="محصولات مرتبط" suppliers={product.supportSuppliers} />
         <PromoBanners />
-        <ContactBanner />
+            <ContactBanner />
       </div>
     </main>
   );

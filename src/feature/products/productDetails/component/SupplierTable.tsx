@@ -1,6 +1,6 @@
 "use client";
 
-import { GalleryVerticalEnd, Phone, ShoppingCart } from "lucide-react";
+import { ChevronLeftIcon, GalleryVerticalEnd, Phone, ShoppingCart } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
@@ -113,7 +113,7 @@ export function SupplierTable({
                           size="icon"
                           className="md:hidden h-8 w-8 bg-primary"
                         >
-                          <ShoppingCart className="size-4" />
+                         <ChevronLeftIcon />
                         </Button>
 
                         {/* Desktop */}

@@ -7,8 +7,11 @@ import { Input } from "@/components/ui/input";
 
 export function ContactBanner() {
   return (
-    <section className="overflow-hidden rounded-2xl bg-gradient-to-l from-[#a5da65] via-[#38780d] to-[#173b06] p-4 text-white shadow-sm sm:rounded-[28px] sm:p-6 md:p-10">
-      <div className="grid min-w-0 gap-6 md:grid-cols-[minmax(0,1fr)_220px] lg:grid-cols-[minmax(0,1fr)_280px] md:items-center">
+    <section className="overflow-hidden rounded-xl  bg-gradient-to-l from-[#a5da65] via-[#38780d] to-[#173b06] p-4 text-white shadow-sm sm:rounded-[28px] sm:p-6 md:p-10">
+      <div className="grid min-w-0 gap-6 md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[280px_minmax(0,1fr)] md:items-center">
+        <div className="hidden rounded-2xl bg-white/15 p-5 md:block">
+          <Headphones className="mx-auto size-20 lg:size-24" />
+        </div>
         <div className="min-w-0">
           <h2 className="text-xl font-black leading-8 sm:text-2xl">
             تماس کارشناسان ما با شما
@@ -23,9 +26,6 @@ export function ContactBanner() {
           <Button className="mt-3 h-10 w-full max-w-xl bg-secondary text-secondary-foreground hover:bg-secondary/90">
             درخواست مشاوره
           </Button>
-        </div>
-        <div className="hidden rounded-2xl bg-white/15 p-5 md:block">
-          <Headphones className="mx-auto size-20 lg:size-24" />
         </div>
       </div>
     </section>
