@@ -71,11 +71,14 @@ export function SupplierTable({
             </TableRow>
           </TableHeader>
           <TableBody>
-            {suppliers.map((supplier) => (
-              <TableRow key={supplier.id} className="bg-muted">
-                <TableCell className="rounded-r-lg  px-1 py-3 sm:px-1 md:px-4 md:py-3 font-semibold"><span className="block w-[80px] truncate md:w-auto">
-    {supplier.name}
-  </span></TableCell>
+                {suppliers.map((supplier, index) => (
+                  <TableRow
+                    key={supplier.id}
+                    className={`border-b-0 ${index % 2 === 0 ? "bg-white" : "bg-muted"}`}
+                  >
+                              <TableCell className="rounded-r-lg  px-1 py-3 sm:px-1 md:px-4 md:py-3 font-semibold"><span className="block w-[80px] truncate md:w-auto">
+                  {supplier.name}
+                </span></TableCell>
                 <TableCell className="px-0 py-3 sm:px-1 md:px-4 md:py-3">{supplier.deliveryTime}</TableCell>
                 <TableCell className="px-0 py-3 sm:px-1 md:px-4 md:py-3">{supplier.stock}</TableCell>
                 <TableCell className="px-0 py-3 sm:px-1 md:px-4 md:py-3">{formatPrice(supplier.price)} <span className="text-muted-foreground">تومان</span></TableCell>
