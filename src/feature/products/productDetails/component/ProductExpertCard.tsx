@@ -55,7 +55,7 @@ export function ProductExpertCard({ product }: ProductExpertCardProps) {
           {experts.map((expert) => (
             <article
               key={expert.id}
-              className="w-full min-w-full snap-start rounded-xl bg-muted p-3 sm:p-4"
+              className="snap-start rounded-xl bg-muted p-3 sm:p-4"
             >
               <div className="flex min-w-0 items-center gap-3">
                 <div className="grid size-14 shrink-0 place-items-center rounded-full border border-emerald-700 bg-[#54c865] text-white sm:size-16">

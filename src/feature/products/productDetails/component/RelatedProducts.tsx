@@ -73,7 +73,7 @@ export function RelatedProducts({ products }: RelatedProductsProps) {
               >
                 <article className="flex h-full min-h-[285px] flex-col rounded-xl border border-border bg-white p-3">
                   <div className="relative mb-3 h-32 overflow-hidden rounded-lg bg-white">
-                    <Image src={imageSrc} alt={item.title} fill className="object-contain" />
+                    <Image src={imageSrc} alt={item.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-contain" />
                     {item.badge ? (
                       <span className="absolute right-2 top-2 rounded bg-red-600 px-2 py-1 text-[10px] text-white">
                         {item.badge}
