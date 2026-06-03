@@ -96,6 +96,9 @@ export const product: ProductDetails = {
     { id: "r4", title: "سیمان پاکتی تهران", supplier: "آینده سازان", price: 244500, badge: "تخفیف", image: "/1.png" },
     { id: "r5", title: "سیمان پاکتی شیراز", supplier: "آینده سازان شیراز", price: 244660, badge: "تخفیف", image: "/2.png" },
     { id: "r6", title: "سیمان پاکتی اصفهان", supplier: "آینده سازان اصفهان", price: 244770, badge: "عمده", image: "/3.png" },
+    { id: "r7", title: "سیمان پاکتی اصفهان", supplier: "آینده سازان اصفهان", price: 244770, badge: "عمده", image: "/3.png" },
+    { id: "r8", title: "سیمان پاکتی اصفهان", supplier: "آینده سازان اصفهان", price: 244770, badge: "عمده", image: "/3.png" },
+    { id: "r9", title: "سیمان پاکتی اصفهان", supplier: "آینده سازان اصفهان", price: 244770, badge: "عمده", image: "/3.png" },
   ],
   faq: [
     {
