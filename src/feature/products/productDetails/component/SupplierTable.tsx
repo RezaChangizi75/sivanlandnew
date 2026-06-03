@@ -27,7 +27,6 @@ export function SupplierTable({
           <GalleryVerticalEnd className="size-5 shrink-0 text-muted-foreground" />
           <h2 className="truncate text-base font-bold sm:text-lg">{title}</h2>
         </div>
-        <span className="text-xs text-muted-foreground">مشاهده همه</span>
       </div>
 
       <div className="space-y-3 md:hidden">

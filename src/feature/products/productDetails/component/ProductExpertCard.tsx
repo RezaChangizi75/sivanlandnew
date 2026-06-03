@@ -66,9 +66,10 @@ export function ProductExpertCard({ product }: ProductExpertCardProps) {
                   <p className="truncate text-xs text-muted-foreground">{expert.role}</p>
                 </div>
               </div>
+              
               <Button
                 asChild
-                className="mt-3 h-9 w-full gap-2 rounded-lg bg-secondary px-3 text-sm font-bold text-secondary-foreground hover:bg-secondary/90"
+                className="mx-auto w-fit mt-3 h-9 align-middle gap-2 rounded-lg bg-secondary px-3 text-sm font-bold text-secondary-foreground hover:bg-secondary/90"
               >
                 <a href={`tel:${expert.phone.replace(/\s/g, "")}`}>
                   <Phone className="size-4" />
@@ -77,6 +78,7 @@ export function ProductExpertCard({ product }: ProductExpertCardProps) {
                   </span>
                 </a>
               </Button>
+              
             </article>
           ))}
         </div>

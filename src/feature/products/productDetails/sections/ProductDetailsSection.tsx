@@ -27,7 +27,7 @@ export function ProductDetailsSection({ productId }: ProductDetailsSectionProps)
         <p className="hidden text-sm text-muted-foreground md:block">{breadcrumb}</p>
 
         <div className="grid min-w-0 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(300px,340px)] lg:items-start xl:gap-5">
-          <div className="min-w-0 space-y-4 lg:order-1">
+          <div className="min-w-0 space-y-4 lg:order-1 xl:justify-center">
             <SectionCard className="overflow-hidden p-3 sm:p-4 md:p-6">
               <div className="grid min-w-0 gap-5 xl:grid-cols-[minmax(280px,330px)_minmax(0,1fr)]">
                 <ProductGallery product={product} />
