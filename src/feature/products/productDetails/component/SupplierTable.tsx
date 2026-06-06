@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeftIcon, GalleryVerticalEnd, Phone, ShoppingCart } from "lucide-react";
+import { ChevronLeftIcon, GalleryVerticalEnd, Phone, PillBottle, ShoppingCart } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
@@ -25,7 +25,7 @@ export function SupplierTable({
     <SectionCard className="overflow-hidden p-3 sm:p-4">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <div className="flex min-w-0 items-center gap-2">
-          <GalleryVerticalEnd className="size-5 shrink-0 text-muted-foreground" />
+          <PillBottle className="size-8 shrink-0 text-muted-foreground bg-muted p-2" />
           <h2 className="truncate text-base font-bold sm:text-lg">{title}</h2>
         </div>
       </div>

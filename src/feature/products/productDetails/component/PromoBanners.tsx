@@ -1,6 +1,9 @@
 "use client";
 
+import { ChevronLeft, GalleryVerticalEnd } from "lucide-react";
 import { SectionCard } from "./SectionCard";
+import Link from "next/link";
+import { CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const banners = [
   "قیمت مناسب بازار سیمان",
@@ -11,6 +14,27 @@ const banners = [
 export function PromoBanners() {
   return (
     <SectionCard className="p-5 sm:p-4">
+       <div className="mb-4 flex items-center justify-between gap-3">
+          <div className="flex min-w-0 items-center justify-end gap-3">
+
+            <div className="flex min-w-0 items-center gap-2">
+              <GalleryVerticalEnd className="size-8 p-2 shrink-0 text-muted-foreground bg-muted" />
+              <h2 className="truncate text-base font-bold sm:text-lg">محصولات مرتبط</h2>
+            </div>
+            <Link
+              href="/products"
+              className="flex items-end gap-1 text-xs text-muted-foreground transition-colors hover:text-primary"
+            >
+              <span>مشاهده همه</span>
+              <ChevronLeft size={12} />
+            </Link>
+          </div>
+
+          <div className="hidden sm:flex shrink-0 items-center gap-2" dir="ltr">
+            {/* <CarouselPrevious className="static size-8 translate-y-0 rounded-sm border-0 bg-muted text-foreground shadow-none hover:bg-muted/80 disabled:bg-muted disabled:text-muted-foreground" />
+            <CarouselNext className="static size-8 translate-y-0 rounded-sm border-0 bg-muted text-foreground shadow-none hover:bg-muted/80 disabled:bg-muted disabled:text-muted-foreground" /> */}
+          </div>
+        </div>
       <div className="-mx-3 overflow-x-auto no-scrollbar px-3 pb-1 sm:mx-0 sm:overflow-visible sm:px-0">
         <div className="flex snap-x snap-mandatory gap-3 md:grid md:grid-cols-3">
           {banners.map((title) => (
