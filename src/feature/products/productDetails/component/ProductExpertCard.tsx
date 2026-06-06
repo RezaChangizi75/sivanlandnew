@@ -25,7 +25,7 @@ export function ProductExpertCard({ product }: ProductExpertCardProps) {
   };
 
   return (
-    <SectionCard className="overflow-hidden p-3 sm:p-4">
+    <SectionCard className="overflow-hidden p-5">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <h2 className="text-base font-bold sm:text-lg">کارشناسان ما</h2>
