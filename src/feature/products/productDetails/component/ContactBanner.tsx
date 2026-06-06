@@ -7,8 +7,8 @@ import { Input } from "@/components/ui/input";
 
 export function ContactBanner() {
   return (
-    <section className="overflow-hidden rounded-xl  bg-gradient-to-l from-[#a5da65] via-[#38780d] to-[#173b06] p-4 text-white shadow-sm sm:rounded-[28px] sm:p-6 md:p-10">
-      <div className="grid min-w-0 gap-6 md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[280px_minmax(0,1fr)] md:items-center">
+    <section className="relative mr-[calc((100vw-100%)/-2)] overflow-hidden rounded-r-none rounded-xl bg-gradient-to-l from-[#a5da65] via-[#38780d] to-[#173b06] text-white shadow-sm sm:rounded-[28px] sm:rounded-r-none">
+      <div className="grid min-w-0 gap-6 md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[280px_minmax(0,1fr)] md:items-center md:p-6">
         <div className="hidden rounded-2xl bg-white/15 p-5 md:block">
           <Headphones className="mx-auto size-20 lg:size-24" />
         </div>
