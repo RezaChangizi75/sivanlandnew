@@ -44,7 +44,7 @@ export interface ProductDetails {
   id: string;
   title: string;
   brand: string;
-  categoryTrail: string[];
+  categoryTrail: { title: string; href: string }[];
   updatedAt: string;
   supplierCount: number;
   reviewSummary: string;
