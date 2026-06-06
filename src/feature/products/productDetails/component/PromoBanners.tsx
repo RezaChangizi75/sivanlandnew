@@ -10,7 +10,7 @@ const banners = [
 
 export function PromoBanners() {
   return (
-    <SectionCard className="p-3 sm:p-4">
+    <SectionCard className="p-5 sm:p-4">
       <div className="-mx-3 overflow-x-auto no-scrollbar px-3 pb-1 sm:mx-0 sm:overflow-visible sm:px-0">
         <div className="flex snap-x snap-mandatory gap-3 md:grid md:grid-cols-3">
           {banners.map((title) => (
