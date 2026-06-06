@@ -1,12 +1,14 @@
 ﻿"use client";
 
-import { useMemo } from "react";
+import { Fragment } from "react";
 import { useGetProductDetailsQuery } from "@/store/productsApi";
 import { SupplierTable } from "../component/SupplierTable";
 import { ContactBanner, ProductDetailsSkeleton, ProductExpertCard, ProductTabs, PromoBanners, RelatedProducts, SectionCard } from "../component";
 import { ProductGallery } from "../component/ProductGallery";
 import { ProductSummary } from "../component/ProductSummary";
 import { StoreDetails } from "../component/StoreDetails";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import Link from "next/link";
 
 
 interface ProductDetailsSectionProps {
@@ -14,8 +16,9 @@ interface ProductDetailsSectionProps {
 }
 
 export function ProductDetailsSection({ productId }: ProductDetailsSectionProps) {
+  
   const { data: product, isLoading } = useGetProductDetailsQuery(productId);
-  const breadcrumb = useMemo(() => product?.categoryTrail.join("، "), [product]);
+  
 
   if (isLoading || !product) {
     return <ProductDetailsSkeleton />;
@@ -24,7 +27,29 @@ export function ProductDetailsSection({ productId }: ProductDetailsSectionProps)
   return (
     <main className="min-h-screen bg-background">
       <div className="container-page space-y-4 py-4 sm:space-y-5 sm:py-5 md:py-8">
-        <p className="hidden text-sm text-muted-foreground md:block">{breadcrumb}</p>
+        <Breadcrumb className="hidden md:block">
+  <BreadcrumbList>
+    {product.categoryTrail.map((item, index) => {
+      const isLast = index === product.categoryTrail.length - 1;
+
+      return (
+        <Fragment key={item.href}>
+          <BreadcrumbItem>
+            {isLast ? (
+              <BreadcrumbPage>{item.title}</BreadcrumbPage>
+            ) : (
+              <BreadcrumbLink asChild>
+                <Link href={item.href}>{item.title}</Link>
+              </BreadcrumbLink>
+            )}
+          </BreadcrumbItem>
+
+          {!isLast && <BreadcrumbSeparator />}
+        </Fragment>
+      );
+    })}
+  </BreadcrumbList>
+</Breadcrumb>
 
         <div className="grid min-w-0 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(300px,340px)] lg:items-start xl:gap-5">
           <div className="min-w-0 space-y-4 lg:order-1 xl:justify-center">
