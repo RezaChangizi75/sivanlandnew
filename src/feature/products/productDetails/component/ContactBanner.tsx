@@ -7,12 +7,12 @@ import { Input } from "@/components/ui/input";
 
 export function ContactBanner() {
   return (
-    <section className="relative mr-[calc((100vw-100%)/-2)] overflow-hidden rounded-r-none rounded-xl bg-gradient-to-l from-[#a5da65] via-[#38780d] to-[#173b06] text-white shadow-sm sm:rounded-[28px] sm:rounded-r-none">
-      <div className="grid min-w-0 gap-6 md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[280px_minmax(0,1fr)] md:items-center md:p-6">
+    <section className="relative mr-[calc((100vw-100%)/-2)] overflow-hidden rounded-r-none rounded-xl bg-gradient-to-l from-[#a5da65] via-[#38780d] to-[#173b06] text-white shadow-sm sm:rounded-[28px] sm:rounded-r-none mt-14 mb-14">
+      <div className="grid min-w-0 gap-6 md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[280px_minmax(0,1fr)] md:items-center  p-6">
         <div className="hidden rounded-2xl bg-white/15 p-5 md:block">
           <Headphones className="mx-auto size-20 lg:size-24" />
         </div>
-        <div className="min-w-0">
+        <div className="min-w-0 justify-self-center">
           <h2 className="text-xl font-black leading-8 sm:text-2xl">
             تماس کارشناسان ما با شما
           </h2>
