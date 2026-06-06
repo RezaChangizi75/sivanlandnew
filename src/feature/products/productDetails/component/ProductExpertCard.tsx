@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import type { ProductDetails } from "@/feature/products/productDetails/types/productDetailsType.ts/types";
 
 import { SectionCard } from "./SectionCard";
+import Link from "next/link";
 
 interface ProductExpertCardProps {
   product: ProductDetails;
@@ -28,10 +29,16 @@ export function ProductExpertCard({ product }: ProductExpertCardProps) {
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <h2 className="text-base font-bold sm:text-lg">کارشناسان ما</h2>
-          <span className="cursor-pointer text-xs text-primary hover:underline">مشاهده همه</span>
+          <Link
+              href="/products"
+              className="flex items-end gap-1 text-xs text-muted-foreground transition-colors hover:text-primary"
+            >
+              <span>مشاهده همه</span>
+              <ChevronLeft size={12} />
+            </Link>
         </div>
         {experts.length > 1 ? (
-          <div className="flex items-center gap-2">
+          <div className="hidden sm:flex items-center gap-2">
             <button
               onClick={() => scrollByCard(1)}
               className="inline-flex size-8 items-center justify-center rounded-lg border border-border bg-background transition-colors hover:bg-muted"

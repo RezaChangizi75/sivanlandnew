@@ -111,7 +111,7 @@ export function SupplierTable({
 
                         <Button
                           size="icon"
-                          className="md:hidden h-8 w-8 bg-primary"
+                          className="md:hidden h-8 w-8 bg-white text-muted-foreground"
                         >
                          <ChevronLeftIcon />
                         </Button>
