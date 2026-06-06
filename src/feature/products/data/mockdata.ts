@@ -4,7 +4,12 @@ export const product: ProductDetails = {
   id: "1",
   title: "سیمان پاکتی آبیک تیپ ۲",
   brand: "نیما فناوری فردا",
-  categoryTrail: ["صفحه خانه", "مصالح ساختمانی", "سیمان", "مصالح پودری"],
+  categoryTrail: [
+  { title: "صفحه خانه", href: "/" },
+  { title: "مصالح ساختمانی", href: "/building-materials" },
+  { title: "سیمان", href: "/cement" },
+  { title: "مصالح پودری", href: "/cement/powder" }
+],
   updatedAt: "۱۲ خرداد ۱۴۰۵",
   supplierCount: 6,
   reviewSummary: "قیمت به روز، تامین مستقیم کارخانه و مناسب پروژه های ساختمانی",
