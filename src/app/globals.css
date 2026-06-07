@@ -242,6 +242,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   --font-sans: "Vazirmatn", "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-vazirmatn);
   --font-serif: var(--font-serif);
   --font-mono: "Geist Mono", ui-monospace, monospace;
 
