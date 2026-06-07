@@ -32,29 +32,29 @@ export function ProductGallery({ product }: ProductGalleryProps) {
   const resolvedGallery = (fetchedImages ?? product.gallery ?? []).map(normalizeSrc);
   const images = resolvedGallery.length ? resolvedGallery : defaultImages;
 
-  useEffect(() => {
-    let mounted = true;
+  // useEffect(() => {
+  //   let mounted = true;
 
-    async function fetchGallery() {
-      try {
-        const res = await fetch(`/api/products/${product.id}/gallery`);
-        if (!res.ok) return;
+  //   async function fetchGallery() {
+  //     try {
+  //       const res = await fetch(`/api/products/${product.id}/gallery`);
+  //       if (!res.ok) return;
 
-        const json = await res.json();
-        if (mounted && Array.isArray(json?.images) && json.images.length) {
-          setFetchedImages(json.images);
-        }
-      } catch {
-        // Keep local fallback images until the real gallery API is available.
-      }
-    }
+  //       const json = await res.json();
+  //       if (mounted && Array.isArray(json?.images) && json.images.length) {
+  //         setFetchedImages(json.images);
+  //       }
+  //     } catch {
+  //       // Keep local fallback images until the real gallery API is available.
+  //     }
+  //   }
 
-    fetchGallery();
+  //   fetchGallery();
 
-    return () => {
-      mounted = false;
-    };
-  }, [product.id]);
+  //   return () => {
+  //     mounted = false;
+  //   };
+  // }, [product.id]);
 
   return (
     <div className="min-w-0 space-y-3">
